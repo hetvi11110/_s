@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function hetvi_patelwpcom_setup() {
+function hetvi_patel_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -28,4 +28,4 @@ function hetvi_patelwpcom_setup() {
 		);
 	}
 }
-add_action( 'after_setup_theme', 'hetvi_patelwpcom_setup' );
+add_action( 'after_setup_theme', 'hetvi_patel_wpcom_setup' );

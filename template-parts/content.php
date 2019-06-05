@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				hetvi_patelposted_on();
-				hetvi_patelposted_by();
+				hetvi_patel_posted_on();
+				hetvi_patel_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php hetvi_patelpost_thumbnail(); ?>
+	<?php hetvi_patel_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -54,6 +54,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php hetvi_patelentry_footer(); ?>
+		<?php hetvi_patel_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

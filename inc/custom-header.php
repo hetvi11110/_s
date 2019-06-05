@@ -14,27 +14,27 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses hetvi_patelheader_style()
+ * @uses hetvi_patel_header_style()
  */
-function hetvi_patelcustom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'hetvi_patelcustom_header_args', array(
+function hetvi_patel_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'hetvi_patel_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'hetvi_patelheader_style',
+		'wp-head-callback'       => 'hetvi_patel_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'hetvi_patelcustom_header_setup' );
+add_action( 'after_setup_theme', 'hetvi_patel_custom_header_setup' );
 
-if ( ! function_exists( 'hetvi_patelheader_style' ) ) :
+if ( ! function_exists( 'hetvi_patel_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see hetvi_patelcustom_header_setup().
+	 * @see hetvi_patel_custom_header_setup().
 	 */
-	function hetvi_patelheader_style() {
+	function hetvi_patel_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

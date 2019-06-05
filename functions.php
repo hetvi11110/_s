@@ -7,7 +7,7 @@
  * @package Hetvi_Patel
  */
 
-if ( ! function_exists( 'hetvi_patelsetup' ) ) :
+if ( ! function_exists( 'hetvi_patel_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,7 +15,7 @@ if ( ! function_exists( 'hetvi_patelsetup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function hetvi_patelsetup() {
+	function hetvi_patel_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -60,7 +60,7 @@ if ( ! function_exists( 'hetvi_patelsetup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'hetvi_patelcustom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'hetvi_patel_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
@@ -81,7 +81,7 @@ if ( ! function_exists( 'hetvi_patelsetup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'hetvi_patelsetup' );
+add_action( 'after_setup_theme', 'hetvi_patel_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -90,20 +90,20 @@ add_action( 'after_setup_theme', 'hetvi_patelsetup' );
  *
  * @global int $content_width
  */
-function hetvi_patelcontent_width() {
+function hetvi_patel_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'hetvi_patelcontent_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'hetvi_patel_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'hetvi_patelcontent_width', 0 );
+add_action( 'after_setup_theme', 'hetvi_patel_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function hetvi_patelwidgets_init() {
+function hetvi_patel_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'hetvi-patel' ),
 		'id'            => 'sidebar-1',
@@ -114,12 +114,12 @@ function hetvi_patelwidgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'hetvi_patelwidgets_init' );
+add_action( 'widgets_init', 'hetvi_patel_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function hetvi_patelscripts() {
+function hetvi_patel_scripts() {
 	wp_enqueue_style( 'hetvi-patel-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'hetvi-patel-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -130,7 +130,7 @@ function hetvi_patelscripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'hetvi_patelscripts' );
+add_action( 'wp_enqueue_scripts', 'hetvi_patel_scripts' );
 
 /**
  * Implement the Custom Header feature.

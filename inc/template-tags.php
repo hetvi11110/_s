@@ -7,11 +7,11 @@
  * @package Hetvi_Patel
  */
 
-if ( ! function_exists( 'hetvi_patelposted_on' ) ) :
+if ( ! function_exists( 'hetvi_patel_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function hetvi_patelposted_on() {
+	function hetvi_patel_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -35,11 +35,11 @@ if ( ! function_exists( 'hetvi_patelposted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'hetvi_patelposted_by' ) ) :
+if ( ! function_exists( 'hetvi_patel_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	function hetvi_patelposted_by() {
+	function hetvi_patel_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'by %s', 'post author', 'hetvi-patel' ),
@@ -51,11 +51,11 @@ if ( ! function_exists( 'hetvi_patelposted_by' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'hetvi_patelentry_footer' ) ) :
+if ( ! function_exists( 'hetvi_patel_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function hetvi_patelentry_footer() {
+	function hetvi_patel_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
@@ -111,14 +111,14 @@ if ( ! function_exists( 'hetvi_patelentry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'hetvi_patelpost_thumbnail' ) ) :
+if ( ! function_exists( 'hetvi_patel_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail.
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function hetvi_patelpost_thumbnail() {
+	function hetvi_patel_post_thumbnail() {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}

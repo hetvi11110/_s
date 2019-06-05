@@ -37,10 +37,10 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$hetvi_pateldescription = get_bloginfo( 'description', 'display' );
-			if ( $hetvi_pateldescription || is_customize_preview() ) :
+			$hetvi_patel_description = get_bloginfo( 'description', 'display' );
+			if ( $hetvi_patel_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $hetvi_pateldescription; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo $hetvi_patel_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
